@@ -1,18 +1,3 @@
-1. sudo su root
-
-2. 拷贝3个jar到minipc，/home/miniand目录下
-
-3. 更新supervisord.conf配置文件
-
-4. cp -r /etc/supervisor/supervisord.conf.minipc /etc/supervisor/supervisord.conf 
-
-5.浏览器 到minipc 9001，然后stop掉 所有任务
-/usr/bin/supervisorctl 
-进去了reload
-
-crontab -e
-*/10 * * * * root /home/miniand/minipc/gitpull.sh
-
 ####github 用户名 adminiand 密码 shang123
 https://github.com/adminiand/minipc.git
 
@@ -35,6 +20,38 @@ minipc中
 `chmod a+x .git/hooks/post-merge`
 
 增加crontab -e
-`*/10 * * * * root /home/miniand/minipc/git pull`
+`*/10 * * * * root /home/miniand/minipc/gitpull.sh`
+
+###目前现有minipc
+安装git，
+sudo su root后，在/home/miniand 下 
+
+`git clone https://github.com/adminiand/minipc.git`
+
+`cd minipc`
+
+`cp post-merge .git/hooks/post-merge`
+
+`chmod a+x .git/hooks/post-merge`
+
+`chmod gitpull.sh`
+
+`chmod restart.sh`
+
+`./restart.sh`
+
+增加crontab -e
+`*/10 * * * * root /home/miniand/minipc/gitpull.sh`
+
+
+####restart.sh  
+1. 更新supervisord.conf配置文件
+
+ cp -r /etc/supervisor/supervisord.conf.minipc /etc/supervisor/supervisord.conf 
+
+2. kill -1 `cat /var/run/supervisord.pid`
+
+crontab -e
+*/10 * * * * root /home/miniand/minipc/gitpull.sh
 
 
