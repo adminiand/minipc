@@ -42,7 +42,7 @@ files = /etc/supervisor/conf.d/*.conf
 [program:gearmandWorker]
 command=/home/miniand/jdk1.7.0_10/bin/java -Dfile.encoding=UTF-8 -cp slf4j-api-1.6.4.jar:mmcrawler-1.0-SNAPSHOT-jar-with-dependencies.jar:java-gearman-service-0.6.6.jar cn.com.admaster.mmcrawler.Crawler 58.215.141.165 4730 cn.com.admaster.mmcrawler.Crawler noproxy
 process_name=%(program_name)s-80%(process_num)02d
-numprocs=1
+numprocs=2
 directory=/home/miniand/minipc
 autostart=true 
 autorestart=true
