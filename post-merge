@@ -1,0 +1,3 @@
+echo ####start reload !!!!!
+../restart.sh
+
