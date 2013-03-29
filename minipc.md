@@ -16,3 +16,18 @@
 https://github.com/adminiand/minipc.git
 
 
+minipc中 
+
+`sudo su root`
+
+`cd /home/miniand`
+
+`git clone https://github.com/adminiand/minipc.git`
+
+`cd minipc`
+
+`cp post-merge .git/hooks/post-merge`
+
+``
+
+
