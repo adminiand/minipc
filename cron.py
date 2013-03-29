@@ -3,7 +3,7 @@ import time
 
 def do():
 	print "do...."
-	os.system('./home/miniand/minipc/gitpull.sh')
+	os.system('sh /home/miniand/minipc/gitpull.sh')
 
 def main():
 	while(True):
