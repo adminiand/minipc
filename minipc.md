@@ -1,9 +1,10 @@
-####github 用户名 adminiand 密码 shang123
-https://github.com/adminiand/minipc.git
+####github
+* 用户名 adminiand 
+* 密码 shang123
+* 地址 https://github.com/adminiand/minipc.git
 
-安装 git
-apt-get install git
-minipc中 
+#######minipc中安装 git： `apt-get install git`
+  
 
 `sudo su root`
 
@@ -19,8 +20,16 @@ minipc中
 
 `chmod a+x .git/hooks/post-merge`
 
-增加crontab -e
-`*/10 * * * * root /home/miniand/minipc/gitpull.sh`
+第一次最后运行下：
+
+`chmod restart.sh`
+
+`./restart.sh`
+
+#####因lubuntu cron有问题，更新任务已经靠cron.py 循环启动gitpull！
+
+~~增加crontab -e
+`*/10 * * * * root /home/miniand/minipc/gitpull.sh`~~
 
 ###目前现有minipc
 安装git，
@@ -40,8 +49,10 @@ sudo su root后，在/home/miniand 下
 
 `./restart.sh`
 
-增加crontab -e
-`*/10 * * * * root /home/miniand/minipc/gitpull.sh`
+#####因lubuntu cron有问题，更新任务已经靠cron.py 循环启动gitpull！
+
+~~增加crontab -e
+`*/10 * * * * root /home/miniand/minipc/gitpull.sh`~~
 
 
 ####restart.sh  
@@ -51,7 +62,7 @@ sudo su root后，在/home/miniand 下
 
 2. kill -1 `cat /var/run/supervisord.pid`
 
-crontab -e
-*/10 * * * * root /home/miniand/minipc/gitpull.sh
+~~crontab -e
+*/10 * * * * root /home/miniand/minipc/gitpull.sh~~
 
 
