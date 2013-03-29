@@ -11,3 +11,8 @@
 进去了reload
 
 
+
+####github 用户名 adminiand 密码 shang123
+https://github.com/adminiand/minipc.git
+
+
