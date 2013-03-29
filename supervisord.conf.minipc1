@@ -6,7 +6,7 @@ chmod = 0777
 [inet_http_server]
 port = 9001
 username = root
-password = $SUPERVISORPASSWORD
+password = admaster12345
 
 [supervisord]
 logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
