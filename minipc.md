@@ -15,7 +15,8 @@
 ####github 用户名 adminiand 密码 shang123
 https://github.com/adminiand/minipc.git
 
-
+安装 git
+apt-get install git
 minipc中 
 
 `sudo su root`
@@ -28,6 +29,9 @@ minipc中
 
 `cp post-merge .git/hooks/post-merge`
 
-``
+`chmod a+x .git/hooks/post-merge`
+
+增加crontab
+`*/10 * * * * root /home/miniand/minipc/git pull`
 
 
