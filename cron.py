@@ -2,12 +2,20 @@ import os
 import time
 
 def do():
-	os.system('./home/miniand/gitpull.sh')
+	print "do...."
+	os.system('./home/miniand/minipc/gitpull.sh')
 
 def main():
 	while(True):
-		do()
-		time.sleep(10)
+		try:
+			do()
+		except Exception, e:
+			print e.message
+		finally:
+			time.sleep(10)
+
+		 
+ 
 
 if __name__ == '__main__':
 	main()
