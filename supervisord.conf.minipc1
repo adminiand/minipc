@@ -1,0 +1,52 @@
+
+[unix_http_server]
+file = /var/run//supervisor.sock
+chmod = 0777
+
+[inet_http_server]
+port = 9001
+username = root
+password = admaster12345
+
+[supervisord]
+logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
+pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
+logfile_maxbytes = 50MB
+
+
+; the below section must remain in the config file for RPC
+; (supervisorctl/web interface) to work, additional interfaces may be
+; added by defining them in separate rpcinterface: sections
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl=unix:///var/run//supervisor.sock ; use a unix:// URL  for a unix socket
+
+; The [include] section can just contain the "files" setting.  This
+; setting can list multiple files (separated by whitespace or
+; newlines).  It can also contain wildcards.  The filenames are
+; interpreted as relative to this file.  Included files *cannot*
+; include files themselves.
+
+[include]
+files = /etc/supervisor/conf.d/*.conf
+
+; [program:gearmandWorker]
+; command=java -Dfile.encoding=UTF-8 -cp /home/miniand/mmcrawler-1.0-SNAPSHOT-jar-with-dependencies.jar org.gearman.example.WorkerRunner -h58.215.141.165 -p4730 cn.com.admaster.mmcrawler.Crawler
+; stdout_logfile=/home/miniand/gearmandWork.log
+
+
+
+[program:gearmandWorker]
+command=/home/miniand/jdk1.7.0_10/bin/java -Dfile.encoding=UTF-8 -cp slf4j-api-1.6.4.jar:mmcrawler-1.0-SNAPSHOT-jar-with-dependencies.jar:java-gearman-service-0.6.6.jar cn.com.admaster.mmcrawler.Crawler 58.215.141.165 4730 cn.com.admaster.mmcrawler.Crawler noproxy
+process_name=%(program_name)s-80%(process_num)02d
+numprocs=1
+directory=/home/miniand/
+autostart=true 
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/miniand/gearmandWork.log
+stdout_logfile_maxbytes=50MB
+
