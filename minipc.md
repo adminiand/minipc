@@ -1,4 +1,4 @@
-####github
+####github 1s
 * 用户名 adminiand 
 * 密码 *shang123*
 * 地址 https://github.com/adminiand/minipc.git
