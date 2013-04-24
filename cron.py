@@ -12,7 +12,7 @@ def main():
 		except Exception, e:
 			print e.message
 		finally:
-			time.sleep(600)
+			time.sleep(60)
 
 		 
  
