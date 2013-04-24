@@ -2,7 +2,7 @@ import os
 import time
 
 def do():
-	print "do...."
+	print "do....."
 	os.system('sh /home/miniand/minipc/gitpull.sh')
 
 def main():
