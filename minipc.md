@@ -43,9 +43,9 @@ sudo su root后，在/home/miniand 下
 
 `chmod a+x .git/hooks/post-merge`
 
-`chmod gitpull.sh`
+`chmod a+x gitpull.sh`
 
-`chmod restart.sh`
+`chmod a+x restart.sh`
 
 `./restart.sh`
 
