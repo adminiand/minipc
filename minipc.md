@@ -1,6 +1,6 @@
 ####github
 * 用户名 adminiand 
-* 密码 shang123
+* 密码 *shang123*
 * 地址 https://github.com/adminiand/minipc.git
 
 #######minipc中安装 git： `apt-get install git`
