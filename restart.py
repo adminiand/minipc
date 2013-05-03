@@ -11,11 +11,11 @@ def do():
 def main():
 	while(True):
 		try:
+			time.sleep(86400)
 			do()
 		except Exception, e:
 			print e.message
-		finally:
-			time.sleep(86400)
+			 
 
 		 
 if __name__ == '__main__':
