@@ -61,4 +61,15 @@ redirect_stderr=true
 stdout_logfile=/home/miniand/cron.log
 stdout_logfile_maxbytes=50MB
 
+[program:restart]
+command=python /home/miniand/minipc/restart.py
+process_name=%(program_name)s-80%(process_num)02d
+numprocs=1
+directory=/home/miniand/minipc
+autostart=true 
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/miniand/restart.log
+stdout_logfile_maxbytes=50MB
+
 
