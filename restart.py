@@ -11,7 +11,8 @@ def do():
 def main():
 	while(True):
 		try:
-			time.sleep(86400)
+			os.system("echo do restart after 60*60*10s : %s"%(time.ctime()))
+			time.sleep(43200)
 			do()
 		except Exception, e:
 			print e.message
