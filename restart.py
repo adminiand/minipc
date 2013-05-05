@@ -4,6 +4,7 @@ import time
 def do():
 	print "do restart....."
 	os.system("echo restart : %s"%(time.ctime()))
+	os.system("pkill git")
 	os.system('kill -1 `cat /var/run/supervisord.pid`')
 
 
