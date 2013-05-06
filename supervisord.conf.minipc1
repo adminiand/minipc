@@ -13,7 +13,7 @@ logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/superv
 pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
 childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
 logfile_maxbytes = 50MB
-
+logfile_backups = 1
 
 ; the below section must remain in the config file for RPC
 ; (supervisorctl/web interface) to work, additional interfaces may be
@@ -49,6 +49,7 @@ autorestart=true
 redirect_stderr=true
 stdout_logfile=/home/miniand/gearmandWork.log
 stdout_logfile_maxbytes=50MB
+logfile_backups = 1
 
 [program:cronpy]
 command=python /home/miniand/minipc/cron.py
@@ -60,6 +61,7 @@ autorestart=true
 redirect_stderr=true
 stdout_logfile=/home/miniand/cron.log
 stdout_logfile_maxbytes=50MB
+logfile_backups = 1
 
 [program:restart]
 command=python /home/miniand/minipc/restart.py
@@ -71,5 +73,6 @@ autorestart=true
 redirect_stderr=true
 stdout_logfile=/home/miniand/restart.log
 stdout_logfile_maxbytes=50MB
+logfile_backups = 1
 
 
