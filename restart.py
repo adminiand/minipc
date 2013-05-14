@@ -15,7 +15,7 @@ def main():
 			os.system("echo do restart after 60*60*10s : %s"%(time.ctime()))
 			os.system("rm -rf /home/miniand/*.log.*")
 			os.system("echo do rm xx.log.*")
-			time.sleep(43200)
+			time.sleep(7200)
 			do()
 		except Exception, e:
 			print e.message
